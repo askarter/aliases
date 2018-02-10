@@ -1,17 +1,24 @@
 # .bashrc
 
 # User specific aliases and functions
-
+# default
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
+# dnf
 alias ct='dnf --enablerepo=updates-testing check-update'
 alias it='dnf --enablerepo=updates-testing -y update'
 
+# kernel testing
+alias ktd='cd /home/karter/tests/kernel-tests/; ./runtests.sh -t default'
+alias ktp='cd /home/karter/tests/kernel-tests/; ./runtests.sh -t performance'
+alias ktm='cd /home/karter/tests/kernel-tests/; ./runtests.sh -t minimal'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
-PS1="\[\033[1;31;1;31m\]\u@\h:\[\033[1;31m\]\w$ \[\033[0m\]\[\033[0m\]"
+# colored console
+PS1="\[\033[1;91;1;91m\]\u@\h:\[\033[1;91m\]\w$ \[\033[0m\]\[\033[0m\]"
