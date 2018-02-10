@@ -1,0 +1,17 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ct='dnf --enablerepo=updates-testing check-update'
+alias it='dnf --enablerepo=updates-testing -y update'
+
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+PS1="\[\033[1;31;1;31m\]\u@\h:\[\033[1;31m\]\w$ \[\033[0m\]\[\033[0m\]"
